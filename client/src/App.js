@@ -134,9 +134,6 @@ function App() {
       ))}
     </ImageList>
 
-
-
-
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -193,9 +190,6 @@ Características Especiais: Proximidade de lojas, restaurantes, transportes púb
             }}
           ><h1>@TODOS OS DIREITOS RESERVADOS</h1>
           </Toolbar>
-
-
-
     </ThemeProvider>
   );
 }
