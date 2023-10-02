@@ -3,7 +3,7 @@ const router = require('./routes')
 const app = express()
 const cors = require('cors')
 
-require('./config')
+require('./config/db')
 
 app.use(express.json())
 app.use(cors())
