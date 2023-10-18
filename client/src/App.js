@@ -10,8 +10,6 @@ import Switch from '@mui/material/Switch';
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
-
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
@@ -105,6 +103,9 @@ function App() {
           <Toolbar
             sx={{
               pr: '25px', // keep right padding when drawer closed
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           ><h1>Cadastro de imóveis</h1>
           </Toolbar>
@@ -114,14 +115,14 @@ function App() {
       </Box>
       <Toolbar
             sx={{
-              color: '#6ba3fe',
+              color: '#ff0f34',
               pr: '24px', // keep right padding when drawer closed
             }}
-          ><h2>preencha o campo assim do seu jeito e encontre a casa do seus sonhos</h2>
+          ><h2>Preencha o campo acima do seu jeito e encontre a casa do seus sonhos</h2>
           </Toolbar>
          <div>
 
-         <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+         <ImageList sx={{ width: 1500, height: 1000 }} cols={3} rowHeight={300}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -137,6 +138,9 @@ function App() {
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           ><h2>Informaçoes sobre o imovel</h2>
           </Toolbar>
@@ -187,6 +191,9 @@ Características Especiais: Proximidade de lojas, restaurantes, transportes púb
               color: '#fff',
               background: '#0954ab',
               pr: '25px', // keep right padding when drawer closed
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           ><h1>@TODOS OS DIREITOS RESERVADOS</h1>
           </Toolbar>

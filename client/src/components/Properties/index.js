@@ -55,12 +55,6 @@ export default class Properties extends Component {
 
     }
 
-    /* Atualiza lista de imóveis */
-    getUpdatedList(propertie){
-        const list = this.state.list?.filter(p => p._id !== propertie._id)
-        if(propertie) list.unshift(propertie)
-        return list
-    }
 
     /* Atualiza Imóvel */
     update(event) {
@@ -146,15 +140,21 @@ export default class Properties extends Component {
 
     /* Remove Imóvel */
     remove(propertie) {
-        console.log(propertie)
-        axios.delete(`${baseUrl}/${propertie._id }`)
+        axios.delete(`${baseUrl}/${propertie._id}`)
             .then(response => {
-                // const list = this.state.list.filter( p => p._id !== propertie._id )
-                const list = this.getUpdatedList(null)
-                this.setState({ list })
+                if (response.status === 200) {
+                    // Remove the deleted item from the list
+                    const updatedList = this.state.list.filter(p => p._id !== propertie._id);
+                    this.setState({ list: updatedList });
+                } else {
+                    console.error("Failed to delete the property.");
+                }
             })
+            .catch(error => {
+                console.error("Error deleting property:", error);
+            });
     }
-
+    
     /* Renderiza formulário de cadastro */
     renderForm(){
         return( 
